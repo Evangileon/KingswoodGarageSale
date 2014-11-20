@@ -1,0 +1,6 @@
+# !! Remember to restart your server after making changes to this file.
+
+store_name: Kingswood Garage Sale
+email_address: yujun.eageon@gmail.com
+currency_unit: '&dollar;'
+tax_name: SaleTax
