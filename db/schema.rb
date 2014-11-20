@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141120055720) do
+ActiveRecord::Schema.define(version: 20141120224301) do
+
+  create_table "conversation_messages", force: true do |t|
+    t.text     "body"
+    t.integer  "conversation_id"
+    t.integer  "conversation_user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "conversation_messages", ["conversation_id"], name: "index_conversation_messages_on_conversation_id", using: :btree
+  add_index "conversation_messages", ["conversation_user_id"], name: "index_conversation_messages_on_conversation_user_id", using: :btree
+
+  create_table "conversation_users", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "conversations", force: true do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "conversations", ["recipient_id"], name: "index_conversations_on_recipient_id", using: :btree
+  add_index "conversations", ["sender_id"], name: "index_conversations_on_sender_id", using: :btree
 
   create_table "nifty_attachments", force: true do |t|
     t.integer  "parent_id"
