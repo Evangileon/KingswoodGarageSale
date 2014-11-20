@@ -10,7 +10,7 @@
 <body>
 <% if has_order? %>
     <p style="border:1px solid black;padding:10px;">
-      You have <%= pluralize current_order.total_items, 'item' %> in your basket which cost
+      You have <%= pluralize current_order.total_items, 'item' %> in your cart which cost
       <%= number_to_currency current_order.total_before_tax %>.
     </p>
 <% end %>
@@ -18,8 +18,8 @@
 <%= render 'layouts/header' %>
 <div class="container">
   <%= yield %>
-  <%= render 'layouts/footer' %>
-</div>
 
+</div>
+<%= render 'layouts/footer' %>
 </body>
 </html>
