@@ -2,10 +2,11 @@
 
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
+    <%= link_to "Kingswood Shop", '#', id: "logo" %>
     <nav>
       <ul class="nav navbar-nav pull-right">
-        <li><%= link_to "Your Shopping Cart", cart_path %></li>
-        <li><%= link_to "Online Help",   help_path %></li>
+        <li><%= link_to "My Shopping Cart", cart_path %></li>
+        <li><%= link_to "Online Help",   "#", class: "start-conversation"%></li>
         <li><%= link_to "Log in as Admin", admin_path %></li>
       </ul>
     </nav>

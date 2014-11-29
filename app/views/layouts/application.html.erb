@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <%# TODO user id %>
+  <% if false %>
+      <meta content='<%= Shoppe::logged_in? ? current_user.id : current_order.id %>' name='user-id'/>
+  <% end %>
   <title>Kingswood Garage Sale</title>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>

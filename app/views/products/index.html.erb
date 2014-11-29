@@ -9,7 +9,10 @@
 
             <p><%= product.short_description %></p>
 
-            <p><b>Price:</b> <%= number_to_currency product.price %></p>
+            <p>
+              <b>Price:</b> <%= number_to_currency product.price %>
+              <%= link_to "Add to cart", product_path(product.permalink), :method => :post %>
+            </p>
           </li>
       <% end %>
     </ul>

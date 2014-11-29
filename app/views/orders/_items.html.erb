@@ -1,4 +1,4 @@
-<table width='100%' border='1'>
+<table width='100%' border='1' class="table table-striped table-bordered table-condensed">
   <thead>
   <tr>
     <td>Quantity</td>
@@ -16,6 +16,12 @@
         <td><%= number_to_currency item.sub_total %></td>
         <td><%= number_to_currency item.tax_amount %></td>
         <td><%= number_to_currency item.total %></td>
+        <% if false %>
+        <td>
+          <%= link_to 'Update', edit_product_path(item), :class => 'btn btn-mini' %>
+          <%= link_to 'Delete', product_path(item), :method => :delete, :class => 'btn btn-mini btn-danger' %>
+        </td>
+        <% end %>
       </tr>
   <% end %>
 

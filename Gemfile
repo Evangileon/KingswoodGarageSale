@@ -53,4 +53,7 @@ gem 'will_paginate'
 
 gem 'devise'
 
+gem 'private_pub'
+gem 'thin'
+
 
