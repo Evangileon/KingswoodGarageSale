@@ -1,5 +1,5 @@
 class ConversationsController < ApplicationController
-  before_filter :authenticate_user!
+  # before_filter :authenticate_user!
 
   layout false
 
@@ -16,8 +16,8 @@ class ConversationsController < ApplicationController
   def show
     @conversation = Conversation.find(params[:id])
     @reciever = interlocutor(@conversation)
-    @messages = @conversation.messages
-    @message = Message.new
+    @messages = @conversation.conversation_messages
+    @message = ConversationMessage.new
   end
 
   private

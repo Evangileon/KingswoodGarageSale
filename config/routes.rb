@@ -19,7 +19,7 @@ KingswoodGarageSale::Application.routes.draw do
   get 'admin' => 'admin'
 
   # footer
-  get 'help' => 'static_pages#help'
+  get 'help' => 'admin_helps#index'
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
 

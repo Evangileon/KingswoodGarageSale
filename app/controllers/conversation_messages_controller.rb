@@ -1,10 +1,10 @@
 class ConversationMessagesController < ApplicationController
-  before_filter :authenticate_user!
+  # before_filter :authenticate_user!
 
   def create
     @conversation = Conversation.find(params[:conversation_id])
-    @message = @conversation.messages.build(message_params)
-    @message.user_id = current_user.id
+    @message = @conversation.conversation_messages.build(message_params)
+    @message.conversation_user_id = current_order.id
     @message.save!
 
     @path = conversation_path(@conversation)
