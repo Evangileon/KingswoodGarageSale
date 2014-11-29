@@ -53,7 +53,12 @@ gem 'will_paginate'
 
 gem 'devise'
 
+# real time chat
+
 gem 'private_pub'
 gem 'thin'
 
+# search
 
+gem 'sunspot_rails'
+gem 'sunspot_solr'

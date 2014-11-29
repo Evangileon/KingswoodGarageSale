@@ -103,3 +103,17 @@ footer ul li {
   float: left;
   margin-left: 15px;
 }
+
+/* product list */
+
+.list-group li {
+  list-style: none;
+}
+
+div.row > div:first-child {
+  border-right: 1px solid #ccc;
+}
+div.row > div:nth-child(5) {
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
