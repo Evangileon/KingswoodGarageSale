@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141120224301) do
+ActiveRecord::Schema.define(version: 20141130234503) do
 
   create_table "conversation_messages", force: true do |t|
     t.text     "body"
@@ -58,6 +58,12 @@ ActiveRecord::Schema.define(version: 20141120224301) do
     t.string  "group"
     t.string  "name"
     t.string  "value"
+  end
+
+  create_table "settings", force: true do |t|
+    t.string "key"
+    t.string "value"
+    t.string "value_type"
   end
 
   create_table "shoppe_countries", force: true do |t|
@@ -233,6 +239,15 @@ ActiveRecord::Schema.define(version: 20141120224301) do
   end
 
   create_table "shoppe_users", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email_address"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email_address"

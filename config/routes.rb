@@ -1,6 +1,7 @@
 KingswoodGarageSale::Application.routes.draw do
 
-  mount Shoppe::Engine => "/admin"
+  mount Shoppe::Engine => "/shoppe"
+  #mount Shoppe::Engine => "/admin"
 
   # product view and buy
   get 'product/:permalink' => 'products#show', :as => 'product'
@@ -16,7 +17,7 @@ KingswoodGarageSale::Application.routes.draw do
   match 'checkout/confirm' => 'orders#confirmation', :as => 'checkout_confirmation', :via => [:get, :post]
 
   # header
-  get 'admin' => 'admin'
+  get 'admin' => 'sessions#new'
 
   # footer
   get 'help' => 'admin_helps#index'
@@ -27,6 +28,21 @@ KingswoodGarageSale::Application.routes.draw do
 
   resources :conversations do
     resources :conversation_messages
+  end
+
+  get 'settings'=> 'settings#edit'
+  post 'settings' => 'settings#update'
+
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  match 'login/reset' => 'sessions#reset', :via => [:get, :post]
+
+  delete 'logout' => 'sessions#destroy'
+
+  resources :users
+
+  resources :admins do
+    resources :users
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

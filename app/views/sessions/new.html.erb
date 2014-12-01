@@ -1,0 +1,23 @@
+<% @page_title = t('sessions.admin_login') %>
+<%= display_flash %>
+<div class="container loginArea">
+  <%= form_tag :login, :class => 'form-signin login' do %>
+      <h2 class="form-signin-heading">Please sign in</h2>
+
+      <p>
+        <%= text_field_tag 'email_address', params[:email_address], :class => 'form-control focus', :placeholder => t('sessions.email') %>
+      </p>
+
+      <p>
+        <%= password_field_tag 'password', params[:password], :class => 'form-control', :placeholder => t('sessions.password') %>
+      </p>
+
+      <p>
+        <%= submit_tag t('sessions.login'), :class => 'submit btn btn-lg btn-primary btn-block' %>
+      </p>
+
+      <p class="reset">
+        <%= link_to t('sessions.reset_password?'), login_reset_path %>
+      </p>
+  <% end %>
+</div>
