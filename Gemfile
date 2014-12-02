@@ -45,7 +45,7 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'shoppe', '~> 0.0.0'
+#gem 'shoppe', '~> 0.0.0'
 
 gem 'bootstrap-sass'
 

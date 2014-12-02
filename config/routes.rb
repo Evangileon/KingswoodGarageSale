@@ -1,6 +1,6 @@
 KingswoodGarageSale::Application.routes.draw do
 
-  mount Shoppe::Engine => "/shoppe"
+  #mount Shoppe::Engine => "/shoppe"
   #mount Shoppe::Engine => "/admin"
 
   # product view and buy
@@ -43,6 +43,28 @@ KingswoodGarageSale::Application.routes.draw do
 
   resources :admins do
     resources :users
+  end
+
+  resources :products do
+    #resources :variants
+    collection do
+      get :import
+      post :import
+    end
+  end
+  resources :orders do
+    collection do
+      post :search
+    end
+    member do
+      post :accept
+      post :reject
+      post :ship
+      #get :despatch_note
+    end
+    # resources :payments, :only => [:create, :destroy] do
+    #   match :refund, :on => :member, :via => [:get, :post]
+    # end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

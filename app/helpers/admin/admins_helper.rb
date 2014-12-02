@@ -1,4 +1,4 @@
-module AdminsHelper
+module Admin
   def navigation_manager_link(item)
     link_to item.description, item.url(self), item.link_options.merge(:class => item.active?(self) ? 'active' : 'inactive')
   end
@@ -36,7 +36,7 @@ module AdminsHelper
 
   def settings_field(field, options = {})
     default = I18n.t("settings.defaults")[field.to_sym]
-    value = (params[:settings] && params[:settings][field]) || Shoppe.settings[field.to_s]
+    value = (params[:settings] && params[:settings][field]) || Admin.settings[field.to_s]
     type = I18n.t("settings.types")[field.to_sym] || 'string'
     case type
       when 'boolean'

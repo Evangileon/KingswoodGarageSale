@@ -1,19 +1,21 @@
-class Error < StandardError
+module Admin
+  class Error < StandardError
 
-  def initialize(options = {})
-    if options.is_a?(String)
-      @options = {:message => options}
-    else
-      @options = options
+    def initialize(options = {})
+      if options.is_a?(String)
+        @options = {:message => options}
+      else
+        @options = options
+      end
     end
-  end
 
-  def message
-    @options[:message]
-  end
+    def message
+      @options[:message]
+    end
 
-  def options
-    @options
-  end
+    def options
+      @options
+    end
 
+  end
 end

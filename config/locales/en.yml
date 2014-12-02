@@ -171,6 +171,120 @@ en:
     reset_alert: No user was found matching the e-mail address
     reset_notice: "An e-mail has been sent to %{email_address} with a new password"
 
+  orders:
+      accept: Accept
+      accept_notice: Order has been accepted successfully
+      add_payment: Add payment
+      add_item: Add an item
+      address: Address
+      amount: Amount
+      back_to_order: Back to order
+      back_to_orders: Back to orders
+      billing_address: Billing Address
+      billing_delivery_address: Billing/Delivery Address
+      build_time: Build time
+      company: Company
+      consignment_number: Consignment Number
+      cost: Cost
+      country: Country
+      create_order: Create order
+      create_notice: Order has been created successfully
+      customer: Customer
+      delivery_address: Delivery address
+      delivery_name: Delivery name
+      edit_order: Edit order
+      email_address: E-Mail address
+      first_name: First name
+      from_payment: from payment
+      id: ID
+      in_progress_warning: This order is still being built by the customer in your store. At present you can only view the items which are within the order.
+      invoice_number: Invoice number
+      insufficient_stock_order: "Insufficient stock to order %{out_of_stock_items}. Quantities have been updated to max total stock available."
+      item: Item
+      last_name: Last name
+      mark_as_shipped: Mark as shipped
+      method: Method
+      missing_delivery_service: No suitable delivery service available, order cannot be created without an associated delivery service.
+      name: Name
+      new_order: New order
+      no_delivery_required: No delivery required for this order.
+      no_orders: No orders to display.
+      no_payments: There are no payments recorded for this order...
+      notes: Notes
+      number: Number
+      order: Order
+      order_accepted: Order Accepted
+      order_balance: Order Balance
+      order_items: Order items
+      order_no_html: "Order <b>#%{order_number}</b>"
+      order_number: Order number
+      order_received: Order Received
+      order_rejected: Order Rejected
+      order_shipped: Order Shipped
+      ordered_products: Ordered products
+      orders: Orders
+      payment: Payment
+      payment_remove_confirmation: Are you sure you wish to remove this payment?
+      payments: Payments
+      phone_number: Phone number
+      post_code: Post code
+      price: Price
+      product: Product
+      products: Products
+      qty: Qty
+      quantity: Quantity
+      received_between: Received between
+      reference: Reference
+      refund: Refund
+      refunded?: Refunded?
+      reject: Reject
+      reject_notice: Order has been rejected successfully
+      save_order: Save order
+      search: Search
+      search_orders: Search orders
+      select_country: Select a country
+      separate_delivery_address: Separate delivery address
+      ship_notice: Order has been shipped successfully
+      sku: SKU
+      sla_warning: Any changes to quantities will update the appropriate stock levels for the associated product.
+      status: Status
+      stock: Stock
+      sub_total: Sub-Total
+      tax: Tax
+      telephone: Telephone
+      total: Total
+      type: Type
+      unit_price: Unit price
+      update_notice: Order has been saved successfully
+      use_separate_delivery_address?: Use a separate delivery address?
+      weight: Weight
+      status_bar:
+        by_user: "by %{user}"
+        consignment_no_html: "Consignment #<b>%{consignment_number}</b>"
+        from_ip: "from %{ip}"
+        on_date: "on %{on}"
+        tracking_url:  Tracking URL
+      despatch_note:
+        despatch_note: Despatch note
+        footer: Thank you for your order!
+        order_number: Order number
+        order_placed: Order placed
+        packed?: Packed?
+        product: Product
+        quantity: Quantity
+        sku: SKU
+        telephone: Telephone
+        total_weight: Total weight
+        weight: Weight
+      statuses:
+        accepted: Accepted
+        building: Building
+        confirming: Confirming
+        received: Received
+        rejected: Rejected
+        shipped: Shipped
+
+
   shared:
     back_to_shoppe: Back to Shoppe
     error: Error

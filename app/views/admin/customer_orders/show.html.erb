@@ -1,0 +1,32 @@
+<% @page_title = "#{t('orders.order')} ##{@order.number}" %>
+<%= content_for :header do %>
+    <p class="buttons">
+      <%= link_to t('edit'), [:edit, @order], :class => 'button' %>
+      <% if @order.accepted? %>
+          <%= link_to t('orders.despatch_note.despatch_note'), [:despatch_note, @order], :class => 'button', :rel => 'print' %>
+      <% end %>
+      <%= link_to t('orders.back_to_orders'), :orders, :class => 'button grey' %>
+    </p>
+    <h2 class="orders">
+      <%= t('orders.order_no_html', order_number: @order.number) %>
+    </h2>
+<% end %>
+<div id="order">
+  <% if @order.received? %>
+      <%= render 'order_details' %>
+      <%= render 'status_bar' %>
+  <% else %>
+      <p class="warning">
+        <%= t('orders.in_progress_warning') %>
+      </p>
+  <% end %>
+  <%= field_set_tag t('orders.order_items'), :class => 'padded' do %>
+      <%= render 'order_items' %>
+  <% end %>
+  <% if @order.received? %>
+      <%= field_set_tag t('orders.payments'), :class => 'padded orderPayments' do %>
+          <%= render 'payments_table' %>
+          <%= render 'payments_form' %>
+      <% end %>
+  <% end %>
+</div>
