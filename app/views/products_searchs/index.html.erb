@@ -1,13 +1,27 @@
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-  </tr>
-  <tr>
-    <td><hr></td>
-    <td><hr></td>
-  </tr>
-  <% @product_searchs.each do |search| %>
-    <tr><%= search.show_at %></tr>
-  <% end %>
-</table>
+<% @product_searchs.each do |category, products| %>
+    <h3><%= category.name %></h3>
+    <ul class="list-group">
+      <% products.each do |product| %>
+          <li>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4><%= link_to product.name, product_path(product.permalink) %></h4>
+              </div>
+
+              <div class="panel-body">
+                <% if product.default_image %>
+                    <%= image_tag product.default_image.path, :width => '200px', :style => "float:right" %>
+                <% end %>
+
+                <p><%= product.short_description %></p>
+
+                <p>
+                  <b>Price:</b> <%= number_to_currency product.price %>
+                  <%= link_to "Add to cart", product_path(product.permalink), :method => :post %>
+                </p>
+              </div>
+            </div>
+          </li>
+      <% end %>
+    </ul>
+<% end %>
