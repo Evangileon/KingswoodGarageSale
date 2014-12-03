@@ -2,6 +2,8 @@ KingswoodGarageSale::Application.routes.draw do
 
   mount Shoppe::Engine => "/admin"
 
+  get 'search' => 'products_searchs#index', :as => 'search'
+
   # product view and buy
   get 'product/:permalink' => 'products#show', :as => 'product'
   post 'product/:permalink' => 'products#buy'

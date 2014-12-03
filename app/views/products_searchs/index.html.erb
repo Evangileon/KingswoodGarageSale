@@ -1,0 +1,13 @@
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+  <tr>
+    <td><hr></td>
+    <td><hr></td>
+  </tr>
+  <% @product_searchs.each do |search| %>
+    <tr><%= search.show_at %></tr>
+  <% end %>
+</table>

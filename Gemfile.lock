@@ -49,6 +49,11 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    draper (1.4.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0)
     dynamic_form (1.1.4)
     em-http-request (1.1.2)
       addressable (>= 2.3.4)
@@ -131,6 +136,7 @@ GEM
       polyamorous (~> 0.6.0)
     rdoc (4.1.2)
       json (~> 1.4)
+    request_store (1.1.0)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
     rsolr (1.0.10)
@@ -205,6 +211,7 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   devise
+  draper
   jbuilder (~> 1.2)
   jquery-rails
   mysql2

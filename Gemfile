@@ -62,3 +62,7 @@ gem 'thin'
 
 gem 'sunspot_rails'
 gem 'sunspot_solr'
+
+# decorator
+
+gem 'draper'
