@@ -36,7 +36,7 @@ class ProductsSearchsController < ApplicationController
     #   fulltext params[:search]
     # end
 
-    @product_searchs = Shoppe::Product.where("name LIKE '%' ? '%'", params[:search]).all
+    @product_searchs = Shoppe::Product.where("name LIKE '%' ? '%' OR short_description LIKE '%' ? '%'", params[:search], params[:search]).all
     @product_searchs = @product_searchs.group_by(&:product_category)
   end
 end

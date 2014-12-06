@@ -32,4 +32,13 @@ class OrdersController < ApplicationController
       redirect_to root_path, :notice => "Order has been placed"
     end
   end
+
+
+  def delete
+      if request.post?
+        item = current_order.order_items.find_by_id(params[:item_id])
+        item.remove
+        redirect_to cart_path
+      end
+  end
 end

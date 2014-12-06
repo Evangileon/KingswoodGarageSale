@@ -1,6 +1,7 @@
 class CreateConversationUsers < ActiveRecord::Migration
   def up
     create_table :conversation_users do |t|
+      t.text name
 
       t.timestamps
     end
