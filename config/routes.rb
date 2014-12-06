@@ -1,5 +1,7 @@
 KingswoodGarageSale::Application.routes.draw do
 
+  devise_for :conversation_user
+
   mount Shoppe::Engine => "/admin"
 
   get 'search' => 'products_searchs#index', :as => 'search'
@@ -29,6 +31,16 @@ KingswoodGarageSale::Application.routes.draw do
   get 'contact' => 'static_pages#contact'
 
   root :to => 'products#index'
+
+  authenticated :conversation_user do
+    get "help" => "admin_helps#index"
+  end
+
+  unauthenticated :conversation_user do
+    devise_scope :conversation_user do
+      get "help" => "conversation_users/sign_up#index"
+    end
+  end
 
   resources :conversations do
     resources :conversation_messages

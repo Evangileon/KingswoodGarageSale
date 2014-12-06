@@ -2,20 +2,20 @@
 
   <thead>
     <tr>
-      <th>Last Name</th>
+      <th>ID</th>
       <th>Email</th>
       <th>Action</th>
     </tr>
   </thead>
 
   <tbody>
-  <% ObjectSpace.each_object(Shoppe::User) do |user| %>
+  <% @conversation_users.each.reject { |u| u.id == current_conversation_user.id }.each do |user| %>
       <tr>
-        <td><%= user.last_name %></td>
-        <td><%= user.email_address %></td>
+        <td><%= user.id %></td>
+        <td><%= user.email %></td>
         <td>
           <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
-                      "data-sid" => current_order.id, "data-rid" => user.id %>
+                      "data-sid" => current_conversation_user.id, "data-rid" => user.id %>
         </td>
       </tr>
   <% end %>
