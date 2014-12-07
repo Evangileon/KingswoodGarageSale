@@ -46,5 +46,4 @@ KingswoodGarageSale::Application.routes.draw do
     resources :conversation_messages
   end
 
-
 end
