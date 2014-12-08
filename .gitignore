@@ -15,8 +15,6 @@
 /log/*.log
 /tmp
 
-solr/data
+solr/
 
-solr/pids
-solr/development
-public/assets
+public/assets/
